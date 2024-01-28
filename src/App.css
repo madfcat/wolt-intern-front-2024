@@ -1,6 +1,6 @@
 .app {
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -36,7 +36,7 @@
 	border-top-right-radius: var(--radius);
 }
 
-.fee-calculator fieldset:after  {
+.fee-calculator fieldset:after {
 	content: '';
 	display: block;
 	border: var(--border);
@@ -52,6 +52,7 @@
 }
 
 .fee-calculator .input-field {
+	position: relative;
 	margin-bottom: 20px;
 	display: flex;
 }
@@ -59,14 +60,14 @@
 .fee-calculator label {
 	margin-right: 18px;
 	max-width: 67px;
-    margin-top: 11px;
+	margin-top: 11px;
 }
 
 .fee-calculator input {
 	border: var(--border);
 	border-radius: var(--radius);
 	height: 34px;
-    padding-top: 4px;
+	padding-top: 4px;
 	padding-left: 5px;
 	width: 95px;
 }
@@ -75,17 +76,26 @@
 	width: unset;
 }
 
-.input-field:after {
+.fee-calculator .input-field:after {
 	margin-left: 20px;
 	margin-top: 11px;
 }
 
-.cart-value-container:after {
+.fee-calculator .cart-value-container:after {
 	content: '€';
 }
 
-.delivery-distance-container:after {
+.fee-calculator .delivery-distance-container:after {
 	content: 'm';
+}
+
+/* .input-field + .submit-field {
+	margin-bottom: 20px;
+	background-color: green;
+} */
+
+.fee-calculator .submit-field {
+	margin-bottom: 29px;
 }
 
 .fee-calculator button {
@@ -96,15 +106,45 @@
 	border-radius: var(--radius);
 	height: 30px;
 	line-height: 30px;
-	box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-	-webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-	-moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-	transform: translate(-4px, -4px);
+	box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+	-webkit-box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+	-moz-box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+	transform: translate(0, 0);
 }
 
 .fee-calculator button:active {
-	box-shadow: 0 0 0px 0px rgba(0,0,0,1);
-	-webkit-box-shadow: 0 0 0px 0px rgba(0,0,0,1);
-	-moz-box-shadow: 0 0 0px 0px rgba(0,0,0,1);
-	transform: translate(0, 0);
+	box-shadow: 0 0 0px 0px rgba(0, 0, 0, 1);
+	-webkit-box-shadow: 0 0 0px 0px rgba(0, 0, 0, 1);
+	-moz-box-shadow: 0 0 0px 0px rgba(0, 0, 0, 1);
+	transform: translate(4px, 4px);
+}
+
+.fee-calculator input[type="datetime-local"] {
+	cursor: text;
+}
+
+input[type="datetime-local"]::-webkit-inner-spin-button,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    /* display: none;
+    -webkit-appearance: none; */
+	cursor: pointer;
+}
+
+/* input["datetime-local"]::-webkit-datetime-edit
+{
+	padding-top: 5px;
+} */
+
+.fee-calculator .error-message {
+	width: 170px;
+	position: absolute;
+	top: 39px;
+	/* left: 70px; */
+	color: var(--error-color);
+	font-size: 10px;
+    z-index: 3;
+}
+
+.fee-calculator .error-input {
+	border-color: var(--error-color);
 }

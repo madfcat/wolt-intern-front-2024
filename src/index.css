@@ -1,6 +1,7 @@
 :root {
 	--border: 3px solid black;
 	--radius: 3px;
+	--error-color: #e63946;
 }
 
 @font-face {
