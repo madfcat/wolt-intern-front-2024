@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# Delivery Fee Calculator - Wolt Internship 2024
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
