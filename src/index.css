@@ -1,20 +1,17 @@
 :root {
-	--border: 3px solid black;
-	--radius: 3px;
+	--border: 0.1875rem solid black;
+	--radius: 0.1875rem;
 	--error-color: #e63946;
 }
 
 @font-face {
 	font-family: 'Manjari Bold';
 	src: local('Manjari Bold'), url(./assets/fonts/Manjari-Bold.ttf.woff) format('woff');
-	/* other formats include: 'woff2', 'truetype, 'opentype',
-							  'embedded-opentype', and 'svg' */
 }
 
 *, *:before, *:after {
 	box-sizing: border-box;
 	line-height: 1;
-	font-size: 14px;
 	font-family: 'Manjari Bold', sans-serif;
 	padding: 0;
 	margin: 0;
@@ -23,6 +20,13 @@
 
 html {
 	font-family: 'Manjari Bold', sans-serif;
+	font-size:  1.2vw;
+}
+
+@media screen and (max-width: 1334px) {
+	html {
+		font-size:  16px;
+	}
 }
 
 html,
